@@ -1,0 +1,184 @@
+<section class="dash_section">
+<nav class="navbar navbar-expand-lg navbar-primary bg-info text-white fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-5 text-white fw-bold" routerLink="/dashboard" >₹ OUR BANK 🏦</a>
+      <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-info " id="navbarTogglerDemo02">
+        <ul class="navbar-nav ms-5 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/dashboard">Home 🏡</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/transaction">Transactions History💸</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/transfer">Fund Transfer💰</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+        <div class="btn-group ms-auto">
+          <!-- <button type="button" class="btn"></button> -->
+          <button type="button" class="btn dropdown-toggle-split  rounded" data-bs-toggle="dropdown" aria-expanded="false">
+            &#x2022;&#x2022;&#x2022; <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+            <li><a class="dropdown-item" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="delete()"><i class="fa fa-duotone fa-trash"></i> Delete Account</a></li>
+          </ul>
+        </div>
+        <!-- <form class="d-flex ms-auto me-4">
+            <button (click)="logout()" class="btn btn-warning  text-white">Log Out</button>
+            <button (click)="delete()" class="btn btn-danger text-white ms-3" >Delete</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
+
+
+
+    
+    <app-delete [item]="acno" (onCancel)="onCancel()" (onDelete)="onDelete($event)"></app-delete>
+<!-- <button (click)="logout()" class="btn bg-warning text-white" style="float:right; margin:-50px 20px ; margin-right: 120px ;">Log Out</button>
+<button (click)="delete()" class="btn bg-danger text-white" style="float:right; margin:-50px 20px ;">Delete</button> -->
+<section class="dash_section">
+<div class="parent row mt-5 pt-4" [ngClass]="acno? 'style1' : '' ">
+    <div class="ms-3 mt-3">
+        <h3 >Welcome {{user}} 👋🏼 </h3>
+        <h6 class="text-warning">System date 📅 and time 🕓: <span class="text-danger">{{sdate | date:'short'}}</span></h6>
+    </div>
+  
+    <!-- <div>
+        <button (click)="logout()" class="btn bg-warning text-white" style="float:right; margin:-50px 20px ; margin-right: 120px ;">Log Out</button>
+        <button (click)="delete()" class="btn bg-danger text-white" style="float:right; margin:-50px 20px ;">Delete</button>
+    </div> -->
+
+    <div class="child mt-lg-3 mt-sm-0 col-lg-6 col-md-6 col-md-12 " >
+    
+            <div class="container deposit  mt-5 text-center bg-blur pb-3 pt-3  border-0  rounded-4 " > 
+                <h4 class="mt-2 border-0 text-white bg-success p-2 rounded-4">Deposit</h4>
+
+                <form [formGroup]="depositForm" action="">
+
+                    <div><input id="dep_accno" formControlName="acno"  class="form-control  border-0 rounded-pill mt-4" type="text" placeholder="Account number"></div>
+                    <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched" style="color: red; text-align:left;">Invalid Account no</div>
+
+                    <div><input id="dep_password" formControlName="pswd" [(ngModel)]="pswd" class="form-control  border-0 rounded-pill mt-3" type="password" placeholder="password"></div>
+                    <div *ngIf="this.depositForm.get('pswd')?.errors && this.depositForm.get('pswd')?.touched" style="color: red; text-align:left;">Invalid Account no</div>
+
+                    <div><input id="dep_amount" formControlName="amount" [(ngModel)]="amount" class="form-control  border-0 rounded-pill mt-3" type="text" placeholder="amount"></div>
+                    <div *ngIf="this.depositForm.get('amount')?.errors && this.depositForm.get('amount')?.touched" style="color: red; text-align:left;">Invalid data entry</div>
+
+                    <button (click)="deposit()" class="btn btn-primary mt-4 mb-2"> Deposit</button><br>
+                    <!-- <a class="text-decoration-none mt-4" routerLink="">Sign in</a> -->
+                </form>
+        
+        
+                </div> 
+        
+        </div>
+        <!-- <script src="bank.js"></script> -->
+        
+    <div class="child mt-3 col-lg-6 col-md-12">
+        
+        
+            <div class="container withdraw  mt-5 text-center  pb-3 pt-3  border-0 rounded-4 " > 
+                <h4 class="mt-2 bg-danger p-2 rounded-4 text-white">Withdraw</h4>
+
+                <form [formGroup]="withdrawForm" action="">
+        
+                    <div><input id="with_accno" formControlName="acno" [(ngModel)]="acno1" class="form-control  border-0  rounded-pill mt-4" type="text" placeholder="Account number"></div>
+                    <div *ngIf="this.withdrawForm.get('acno')?.errors && this.withdrawForm.get('acno')?.touched" style="color: red; text-align:left;">Invalid Account no</div>
+
+                    <div><input id="with_password" formControlName="pswd" [(ngModel)]="pswd1" class="form-control  border-0 rounded-pill mt-3" type="password" placeholder="password"></div>
+                    <div *ngIf="this.withdrawForm.get('pswd')?.errors && this.withdrawForm.get('pswd')?.touched" style="color: red; text-align:left;">Invalid Account no</div>
+
+                    <div><input id="with_amount" formControlName="amount" [(ngModel)]="amount1" class="form-control  border-0 rounded-pill mt-3" type="text" placeholder="amount"></div>
+                    <div *ngIf="this.withdrawForm.get('amount')?.errors && this.withdrawForm.get('amount')?.touched" style="color: red; text-align:left;">Invalid data entry</div>
+
+
+        
+                    <button (click)="withdraw()" class="btn btn-primary mt-4 mb-2"> Withdraw</button><br>
+                    <!-- <a class="text-decoration-none mt-4" routerLink="">Sign in</a> -->
+                </form>
+        
+                </div>
+        
+           
+        
+        </div>
+        <!-- <script src="bank.js"></script> -->
+</div>
+
+</section>
+
+
+<footer class="bg-light  text-center text-white" style="margin-top: 60px;">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="/dashboard"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="/dashboard"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="/dashboard"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="/dashboard"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="/dashboard"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="/dashboard"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+  </div>
+  <div class="text-center bg-info p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="/dashboard">OurBank &reg;</a>
+  </div>
+</footer>
+</section>

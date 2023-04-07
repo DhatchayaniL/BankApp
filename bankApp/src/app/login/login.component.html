@@ -1,0 +1,47 @@
+<section class="log_section">
+<div class="row">
+    <div class="col-4">
+    </div>
+
+    <div class="container login w-25 col-lg-4 col-sm-12 pb-3 ps-4 pe-4 text-center border-0 rounded-4 "> 
+        <h4 class="mt-4 text-dark"><b>OUR BANK</b> </h4>
+       <img class="mt-2 rounded-circle" src="https://static.vecteezy.com/system/resources/previews/002/249/718/non_2x/bank-building-icon-finance-symbol-illustration-for-web-and-mobil-app-on-grey-background-free-vector.jpg" alt="" srcset="" style="height:90px; width:fit-content; " >
+       <h6  class="text-secondary mt-2">{{aim}}</h6>
+
+           
+        <!-- event binding using $event -->
+            <!-- <div><input id="login_accno" (change)="acnoChange($event)" class="form-control mt-3"  type="text" [placeholder]="account"></div>
+            <div><input id="login_pswd" (change)="pswdChange($event)" class="form-control mt-3" type="password" placeholder="password"></div> -->
+
+        <!--event binding using template reference variable  -->
+            <!-- <div><input id="login_accno" #acno class="form-control mt-3"  type="text" [placeholder]="account"></div>
+            <div><input id="login_pswd" #pswd class="form-control mt-3" type="password" placeholder="password"></div> -->
+
+        <!--ngModel (Two direction)-->
+        <form [formGroup]="loginForm" action="">
+
+            <div><input id="login_accno" formControlName="acno" [(ngModel)]="acno" class="form-control border-0 mt-4 rounded-pill"  type="text" [placeholder]="account"></div>
+            <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" style="color: red; text-align:left;">Invalid Account no</div>
+
+            <div><input id="login_pswd" formControlName="pswd" [(ngModel)]="pswd" class="form-control border-0 rounded-pill mt-3" type="password" placeholder="Password"></div>
+            <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched" style="color: red; text-align:left;">Invalid Account no</div>
+
+
+            <!-- <button (click)="login(acno,pswd)" class="btn btn-primary  mt-3 mb-2">Login</button><br> -->
+
+            <button (click)="login()" class="btn btn-primary  mt-4 mb-2">Login</button><br>
+
+            <div class="mt-2 mb-2">
+                <p class="mb-0 text-secondary">Don't have an account? <a routerLink="register" class="text-decoration-none fw-bold">Sign Up</a>
+                </p>
+            </div>
+            
+        </form>
+
+        </div>
+
+    <div class="col-4">
+    </div>
+</div>
+
+</section>

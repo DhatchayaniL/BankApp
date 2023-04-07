@@ -1,0 +1,154 @@
+<section class="dash_section">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-info text-white fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5 text-white fw-bold" routerLink="/dashboard" >₹ OUR BANK 🏦</a>
+          <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse bg-info " id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-5 mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/dashboard">Home 🏡</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/transaction">Transactions History💸</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/transfer">Fund Transfer💰</a>
+              </li>
+            </ul>
+            <!-- <div class="btn-group ms-auto"> -->
+              <!-- <button type="button" class="btn"></button> -->
+              
+            <!-- <form class="d-flex ms-auto me-4">
+                <button (click)="logout()" class="btn btn-warning  text-white">Log Out</button>
+                <button (click)="delete()" class="btn btn-danger text-white ms-3" >Delete</button>
+            </form> -->
+
+
+          <!-- </div> -->
+        </div>
+        </div>
+        <div class="child mt-lg-3 mt-sm-0 col-lg-6 col-md-6 col-md-12 " >
+    
+          <div class="container transfer mt-5 text-center bg-blur pb-3 pt-3  border-0  rounded-4 " > 
+              <h4 class="mt-2 border-0 text-white bg-success p-2 rounded-4">Transfer💰</h4>
+        <form [formGroup]="transferForm" (ngSubmit)="transfer()">
+          <div class="form-group">
+            <label for="acno">Current Account Number:</label>
+            <input type="text" id="acno" formControlName="acno" class="form-control" />
+            <div *ngIf="transferForm.controls['acno'].errors && transferForm.controls['acno'].touched" class="text-danger">
+              <div *ngIf="transferForm.controls['acno'].errors['required']">Current Account Number is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="reciacno">Recipient Account Number:</label>
+            <input type="text" id="reciacno" formControlName="reciacno" class="form-control" />
+            <div *ngIf="transferForm.controls['reciacno'].errors && transferForm.controls['reciacno'].touched" class="text-danger">
+              <div *ngIf="transferForm.controls['reciacno'].errors['required']">Recipient Account Number is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" formControlName="amount" class="form-control" />
+            <div *ngIf="transferForm.controls['amount'].errors && transferForm.controls['amount'].touched" class="text-danger">
+              <div *ngIf="transferForm.controls['amount'].errors['required']">Amount is required.</div>
+              <div *ngIf="transferForm.controls['amount'].errors['min']">Amount must be at least 1.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pswd">Password:</label>
+            <input type="password" id="pswd" formControlName="pswd" class="form-control" />
+            <div *ngIf="transferForm.controls['pswd'].errors && transferForm.controls['pswd'].touched" class="text-danger">
+              <div *ngIf="transferForm.controls['pswd'].errors['required']">Password is required.</div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="transferForm.invalid">Transfer</button>
+        </form>
+          </div>
+        </div>
+        
+        <div *ngIf="transferResult" class="alert alert-success mt-3">
+          {{ transferResult }}
+        </div>
+        
+        <div *ngIf="transferError" class="alert alert-danger mt-3">
+          {{ transferError }}
+        </div>
+
+    
+    
+        
+        
+    <!-- <button (click)="logout()" class="btn bg-warning text-white" style="float:right; margin:-50px 20px ; margin-right: 120px ;">Log Out</button>
+    <button (click)="delete()" class="btn bg-danger text-white" style="float:right; margin:-50px 20px ;">Delete</button> -->
+                   
+    
+    <footer class="bg-light  text-center text-white" style="margin-top: 60px;">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #3b5998;"
+            href="/dashboard"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+    
+          <!-- Twitter -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #55acee;"
+            href="/dashboard"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <!-- Google -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #dd4b39;"
+            href="/dashboard"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #ac2bac;"
+            href="/dashboard"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+    
+          <!-- Linkedin -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #0082ca;"
+            href="/dashboard"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <!-- Github -->
+          <a
+            class="btn text-white btn-floating m-1"
+            style="background-color: #333333;"
+            href="/dashboard"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+      </div>
+      <div class="text-center bg-info p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="/dashboard">OurBank &reg;</a>
+      </div>
+    </footer>
+  

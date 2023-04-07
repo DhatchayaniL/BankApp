@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Neonderthaw&family=Notable&family=Pacifico&family=Permanent+Marker&family=Pinyon+Script&family=Poppins:wght@300&family=Rubik&family=Rubik+Beastly&family=Rubik+Bubbles&family=Sevillana&family=Titan+One&family=Ubuntu&family=Ubuntu+Mono&family=Wallpoet&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    /* background-image: url('https://img.freepik.com/free-vector/person-sending-money-using-phone-flat-vector-illustration-hands-holding-cash-smartphone-with-banking-app-its-screen-money-transferring-concept-banner-website-design-landing-web-page_74855-25256.jpg?w=2000'); */
+    /* background-image : linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('https://img.freepik.com/free-vector/person-sending-money-using-phone-flat-vector-illustration-hands-holding-cash-smartphone-with-banking-app-its-screen-money-transferring-concept-banner-website-design-landing-web-page_74855-25256.jpg?w=2000'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+nav{
+    height: 60px;
+}
+nav a{
+    color: #fff;
+}
+.navbar-nav a{
+    color:#fff;
+    transition: .5s ease;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+
+
+}
+
+.navbar-nav a:hover{
+color: blue;
+}
+
+.navbar-brand{
+    font-size: 24px;
+    font-family: 'Ubuntu', sans-serif;
+
+    margin-left: 20px;
+}
+
+/* login & reg section */
+.log_section, .reg_section{
+    padding-top: 50px;
+    background-image : linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://img.freepik.com/free-vector/person-sending-money-using-phone-flat-vector-illustration-hands-holding-cash-smartphone-with-banking-app-its-screen-money-transferring-concept-banner-website-design-landing-web-page_74855-25256.jpg?w=2000');
+    /*background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://img.freepik.com/free-vector/hand-government-partners-giving-grants-business-tiny-people-receiving-money-searching-financial-assistance-protection-flat-vector-illustration-subsidy-finance-investment-concept_74855-21148.jpg?size=626&ext=jpg');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://img.freepik.com/free-vector/tiny-people-depositing-taking-money-from-government-bank-flat-illustration_74855-17121.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://img.freepik.com/free-vector/man-paying-online-receiving-cashback-wallet_88138-692.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://img.freepik.com/free-vector/flat-man-with-golden-coins-receive-cashback-e-wallet_88138-835.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://img.freepik.com/free-vector/hand-government-partners-giving-grants-business-tiny-people-receiving-money-searching-financial-assistance-protection-flat-vector-illustration-subsidy-finance-investment-concept_74855-21148.jpg?size=626&ext=jpg');*/
+    /*background-image: url('https://img.freepik.com/free-photo/purple-piggy-bank-with-copy-space_23-2148879401.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+   /* background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)),url('https://img.freepik.com/free-vector/rocket-launch-background-with-smoke-clouds_1017-33467.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    /*background-image: url('https://img.freepik.com/free-photo/paper-surrounded-finance-element_23-2148080958.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+}
+
+.dash_section{
+    /*background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('https://img.freepik.com/free-vector/people-work-office-together_107791-11269.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('https://img.freepik.com/free-vector/office-workers-doodle-concept-colleagues-chatting_107791-11221.jpg?size=626&ext=jpg&ga=GA1.2.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('https://img.freepik.com/free-vector/business-startup-with-businessman-flying-rocket_107791-9852.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)),url('https://img.freepik.com/free-vector/meeting-room-cartoon-concept-with-business-people-listening-presentation-office-space-vector-illustration_1284-77303.jpg?size=626&ext=jpg&ga=GA1.1.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('https://img.freepik.com/free-vector/funky-tone-memphis-background_53876-99526.jpg?size=626&ext=jpg&ga=GA1.2.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('https://img.freepik.com/free-vector/flat-design-minimalist-background_23-2149987685.jpg?size=626&ext=jpg&ga=GA1.2.381223304.1675923649&semt=ais');*/
+    /*background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),url('https://img.freepik.com/free-vector/colorful-background-with-geometric-shapes_87374-92.jpg?w=826&t=st=1676370828~exp=1676371428~hmac=2eeb0beac508659a94ff6403113b3577dea3db4f915b6dd51bdc89fc491d71a8');*/
+    background-color:#FFFFFF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+}
+
+.trans_section{
+    background-color:#FFFFFF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+}
+
+input{
+    box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px inset;
+
+}
+
+
+@media(max-width:600px){
+    /* .btn-floating{
+        width: 10px;
+        height: 20px;
+        padding-bottom: 30px;
+        padding-right: 25px;
+    } */
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        overflow-x:hidden;
+        padding: 0;
+        
+    }
+
+    .parent h3{
+        font-size: large;
+    }
+    .parent h6{
+        font-size: small;
+    }
+
+    .withdraw,.deposit{
+        max-width: 300px;
+    }
+   footer{
+    margin-right: -20px;
+   }
+
+
+} 
